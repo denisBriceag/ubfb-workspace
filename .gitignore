@@ -45,3 +45,7 @@ Thumbs.db
 .claude/settings.local.json
 
 .nx/polygraph
+.angular
+
+vitest.config.*.timestamp*
+__screenshots__/
