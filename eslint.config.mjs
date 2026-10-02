@@ -17,6 +17,11 @@ export default [
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
           depConstraints: [
             {
+              sourceTag: 'type:contracts',
+              notDependOnLibsWithTags: ['*'],
+              allowedExternalImports: ['zod', 'zod/*'],
+            },
+            {
               sourceTag: '*',
               onlyDependOnLibsWithTags: ['*'],
             },
