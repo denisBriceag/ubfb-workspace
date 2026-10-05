@@ -1,6 +1,9 @@
-autoInstallPeers: true
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: false
+  lmdb: false
+  msgpackr-extract: false
+  nx: true
+  unrs-resolver: true
 
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - nx
-  - unrs-resolver
+autoInstallPeers: true

@@ -5,13 +5,13 @@ export const ROLE_CAPABILITIES: Record<Role, readonly Capability[]> = {
   [Role.SUPER_ADMIN]: Object.values(Capability),
 
   [Role.ADMIN]: [
-    Capability.MODERATOR_READ,
-    Capability.MODERATOR_CREATE,
-    Capability.MODERATOR_UPDATE,
-    Capability.MODERATOR_DELETE,
+    Capability.CONTENT_MANAGER_READ,
+    Capability.CONTENT_MANAGER_INVITE,
+    Capability.CONTENT_MANAGER_UPDATE,
+    Capability.CONTENT_MANAGER_DELETE,
 
     Capability.ORDER_MANAGER_READ,
-    Capability.ORDER_MANAGER_CREATE,
+    Capability.ORDER_MANAGER_INVITE,
     Capability.ORDER_MANAGER_UPDATE,
     Capability.ORDER_MANAGER_DELETE,
 
@@ -33,7 +33,7 @@ export const ROLE_CAPABILITIES: Record<Role, readonly Capability[]> = {
     Capability.ORDER_CANCEL,
   ],
 
-  [Role.MODERATOR]: [
+  [Role.CONTENT_MANAGER]: [
     Capability.PRODUCT_READ,
     Capability.PRODUCT_CREATE,
     Capability.PRODUCT_UPDATE,

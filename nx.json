@@ -36,13 +36,6 @@
         "testTargetName": "test",
         "ciTargetName": "test-ci",
         "testMode": "watch"
-      },
-      "exclude": ["e2e/**/*"]
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
       }
     }
   ],
@@ -59,10 +52,101 @@
   },
   "generators": {
     "@nx/angular:application": {
-      "e2eTestRunner": "playwright",
+      "e2eTestRunner": "none",
       "linter": "eslint",
       "style": "scss",
-      "unitTestRunner": "vitest-angular"
+      "unitTestRunner": "vitest-angular",
+      "skipTests": true
+    },
+    "@nx/angular:host": {
+      "e2eTestRunner": "none"
+    },
+    "@nx/angular:remote": {
+      "e2eTestRunner": "none"
+    },
+    "@nx/angular:federate-module": {
+      "e2eTestRunner": "none"
+    },
+    "@nx/nest:application": {
+      "e2eTestRunner": "none"
+    },
+    "@nx/node:application": {
+      "e2eTestRunner": "none"
+    },
+    "@nx/web:application": {
+      "e2eTestRunner": "none"
+    },
+    "@nx/angular:library": {
+      "skipTests": true
+    },
+    "@nx/angular:component": {
+      "skipTests": true
+    },
+    "@nx/angular:directive": {
+      "skipTests": true
+    },
+    "@nx/angular:pipe": {
+      "skipTests": true
+    },
+    "@nx/angular:scam": {
+      "skipTests": true
+    },
+    "@nx/angular:scam-directive": {
+      "skipTests": true
+    },
+    "@nx/angular:scam-pipe": {
+      "skipTests": true
+    },
+    "@schematics/angular:service": {
+      "skipTests": true
+    },
+    "@schematics/angular:guard": {
+      "skipTests": true
+    },
+    "@schematics/angular:interceptor": {
+      "skipTests": true
+    },
+    "@schematics/angular:resolver": {
+      "skipTests": true
+    },
+    "@schematics/angular:class": {
+      "skipTests": true
+    },
+    "@nx/nest:class": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:controller": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:filter": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:gateway": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:guard": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:interceptor": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:middleware": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:pipe": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:provider": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:resolver": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:resource": {
+      "unitTestRunner": "none"
+    },
+    "@nx/nest:service": {
+      "unitTestRunner": "none"
     }
   }
 }
