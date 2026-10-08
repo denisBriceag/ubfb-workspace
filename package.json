@@ -2,7 +2,22 @@
   "name": "@ubfb-workspace/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start:api-gateway": "nx serve api-gateway",
+    "build:api-gateway": "nx build api-gateway --configuration=development",
+    "lint:api-gateway": "nx lint api-gateway",
+    "test:api-gateway": "nx test api-gateway",
+
+    "start:auth": "nx serve auth",
+    "build:auth": "nx build auth --configuration=development",
+    "lint:auth": "nx lint auth",
+    "test:auth": "nx test auth",
+
+    "start:users": "nx serve users",
+    "build:users": "nx build users --configuration=development",
+    "lint:users": "nx lint users",
+    "test:users": "nx test users"
+  },
   "private": true,
   "packageManager": "pnpm@12.9.1",
   "devDependencies": {
@@ -28,6 +43,7 @@
     "@nx/webpack": "23.2.1",
     "@nx/workspace": "23.2.1",
     "@schematics/angular": "~22.1.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@swc/helpers": "~0.5.18",
     "@types/node": "^22.0.0",
     "@typescript-eslint/utils": "^8.58.0",
@@ -55,10 +71,14 @@
     "@angular/forms": "~22.1.0",
     "@angular/platform-browser": "~22.1.0",
     "@angular/router": "~22.1.0",
+    "@grpc/grpc-js": "^1.14.5",
+    "@grpc/proto-loader": "^0.8.1",
     "@nestjs/common": "^12.1.2",
+    "@nestjs/config": "^12.0.1",
     "@nestjs/core": "^12.1.2",
     "@nestjs/microservices": "^12.1.2",
     "@nestjs/platform-express": "^12.1.2",
+    "helmet": "^8.3.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.0",
     "zod": "^4.6.5"

@@ -56,9 +56,6 @@
       "configurations": {
         "development": {
           "buildTarget": "api-gateway:build:development"
-        },
-        "production": {
-          "buildTarget": "api-gateway:build:production"
         }
       }
     }

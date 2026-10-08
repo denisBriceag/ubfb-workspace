@@ -4,6 +4,7 @@ allowBuilds:
   lmdb: false
   msgpackr-extract: false
   nx: true
+  protobufjs: true
   unrs-resolver: true
 
 autoInstallPeers: true

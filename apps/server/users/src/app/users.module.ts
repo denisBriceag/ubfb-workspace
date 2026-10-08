@@ -4,18 +4,18 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
 import { envSchema } from '../env';
-import { AuthController } from './auth.controller';
-import { AuthService } from './auth.service';
+import { UsersController } from './users.controller';
+import { UsersService } from './users.service';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: join(process.cwd(), 'apps', 'server', 'auth', '.env'),
+      envFilePath: join(process.cwd(), 'apps', 'server', 'users', '.env'),
       validationSchema: envSchema,
     }),
   ],
-  controllers: [AuthController],
-  providers: [AuthService],
+  controllers: [UsersController],
+  providers: [UsersService],
 })
-export class AuthModule {}
+export class UsersModule {}

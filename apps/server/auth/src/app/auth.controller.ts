@@ -3,10 +3,10 @@ import { AuthService } from './auth.service';
 
 @Controller()
 export class AuthController {
-  constructor(private readonly appService: AuthService) {}
+  constructor(private readonly _authService: AuthService) {}
 
   @Get()
   getData() {
-    return this.appService.getData();
+    return this._authService.getData();
   }
 }

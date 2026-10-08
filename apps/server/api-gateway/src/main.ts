@@ -1,21 +1,36 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
-import { Logger } from '@nestjs/common';
+import { StandardSchemaValidationPipe } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
+
+import helmet from 'helmet';
+
 import { AppModule } from './app/app.module';
+import type { Env } from './env';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const globalPrefix = 'api';
-  app.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT || 3000;
-  await app.listen(port);
-  Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`,
+  const config = app.get<ConfigService<Env, true>>(ConfigService);
+
+  app.setGlobalPrefix('api');
+
+  app.use(
+    helmet({
+      contentSecurityPolicy:
+        config.getOrThrow('NODE_ENV', { infer: true }) === 'production',
+    }),
   );
+
+  app.useGlobalPipes(new StandardSchemaValidationPipe());
+
+  app.enableCors({
+    origin: config.getOrThrow('FE_ADMIN_URL', { infer: true }),
+    methods: config.getOrThrow('CORS_METHODS', { infer: true }),
+    credentials: true,
+  });
+
+  app.enableShutdownHooks();
+
+  await app.listen(config.getOrThrow('PORT', { infer: true }));
 }
 
-bootstrap();
+void bootstrap();

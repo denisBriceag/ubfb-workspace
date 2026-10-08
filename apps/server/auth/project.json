@@ -54,9 +54,6 @@
       "configurations": {
         "development": {
           "buildTarget": "auth:build:development"
-        },
-        "production": {
-          "buildTarget": "auth:build:production"
         }
       }
     }

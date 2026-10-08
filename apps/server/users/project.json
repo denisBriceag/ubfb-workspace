@@ -54,9 +54,6 @@
       "configurations": {
         "development": {
           "buildTarget": "users:build:development"
-        },
-        "production": {
-          "buildTarget": "users:build:production"
         }
       }
     }
