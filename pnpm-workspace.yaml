@@ -8,3 +8,8 @@ allowBuilds:
   unrs-resolver: true
 
 autoInstallPeers: true
+
+peerDependencyRules:
+  allowedVersions:
+    '@nx/nest>@nestjs/common': '12'
+    '@nx/nest>@nestjs/core': '12'
